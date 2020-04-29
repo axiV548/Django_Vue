@@ -19,11 +19,12 @@ from django.conf.urls import url, include
 # import video.urls
 import photos.urls
 import information.urls
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/information/', include(information.urls)),
+    path('api/information', include(information.urls)),
     # path('api/video/', include(video.urls))
-    path('api/photos/', include(photos.urls)),     #api接口地址
-]
+    path('api/photos', include(photos.urls)),     #api接口地址
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
