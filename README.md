@@ -1,2 +1,2 @@
-# django_vue
-Django+Vue网站，爬虫获取数据
+# django_api
+Django后端api
